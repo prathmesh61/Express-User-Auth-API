@@ -1,12 +1,14 @@
 const express = require("express");
 
-const app = express();
+const router = express.Router();
 
 // user login route
-app.post("/login", (req, res) => {
-  return res.status(200).json("Hello");
+router.get("/login", (req, res) => {
+  return res.status(200).json("Hello login");
 });
 // user register route
-app.post("/register", (req, res) => {
+router.post("/register", (req, res) => {
   return res.status(200).json("Hello");
 });
+
+module.exports = router;
