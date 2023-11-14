@@ -37,7 +37,7 @@ const login = async (req, res) => {
     }
     const match = await bcrypt.compare(password, checkUserExist.password);
     if (!match) {
-      return res.status(400).json({ message: "Invalid credentials" });
+      return res.status(401).json({ message: "Invalid credentials" });
     }
     const token = jwt.sign({ id: checkUserExist._id }, "secret", {
       expiresIn: "1h",
