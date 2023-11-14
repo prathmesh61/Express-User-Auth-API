@@ -51,6 +51,20 @@ const login = async (req, res) => {
     return res.status(500).json({ message: "Please try again" });
   }
 };
+
+// logout users
+const logout = async (req, res) => {
+  try {
+    // Clear session and cookie
+    req.session.destroy();
+    res.clearCookie("token");
+    return res.status(200).json({ message: "Logout successful" });
+  } catch (error) {
+    return res.status(500).json({ message: "Please try again" });
+  }
+};
+
+// get all users
 const getUsers = async (req, res) => {
   try {
     const users = await User.find({});
@@ -61,4 +75,4 @@ const getUsers = async (req, res) => {
   }
 };
 
-module.exports = { login, register, getUsers };
+module.exports = { login, register, getUsers, logout };

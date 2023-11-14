@@ -3,6 +3,7 @@ const {
   login,
   register,
   getUsers,
+  logout,
 } = require("../controllers/user.controller.js");
 const router = express.Router();
 
@@ -12,5 +13,7 @@ router.get("/login", login);
 router.post("/register", register);
 // get all users
 router.get("/all-user", getUsers);
+// logout route
+router.get("/logout", logout);
 
 module.exports = router;
