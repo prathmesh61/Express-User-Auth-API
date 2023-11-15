@@ -7,21 +7,21 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import Login from "../pages/login/Login";
-import Register from "../pages/register/Register";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import App from "./App";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <div>
-        <h1>Hello World</h1>
-        <Link to="about">About Us</Link>
+        <App />
       </div>
     ),
   },
   {
-    path: "about",
+    path: "/about",
     element: <div>About</div>,
   },
   {
